@@ -1,10 +1,9 @@
-package com.seizz.Lab1;
 import java.util.*;
 import java.util.Arrays;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.util.*;
-public class Main
+public class Lab3
 {
     private static record City(String city, long population) {
         private City(String city, long population) {
