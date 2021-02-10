@@ -1,54 +1,54 @@
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.function.Function;
-import java.util.Arrays;
+
 public class Lab2
 {
-    public static Integer oppositeHouse(Integer houseN, Integer streetL)
+    private static Integer oppositeHouse(Integer houseN, Integer streetL)
     {
         return streetL * 2 - houseN + 1;
     }
-    public static String nameShuffle(String name)
+    private static String nameShuffle(String name)
     {
-        ArrayList<String> arr = new ArrayList<>(Arrays.asList(name.split(" ")));
-        Collections.reverse(arr);
-        return String.join(" ", arr);
-        //return name.split(" ")[1] + " " + name.split(" ")[0];
+        //ArrayList<String> arr = new ArrayList<>(Arrays.asList(name.split(" ")));
+        //Collections.reverse(arr);
+        //return String.join(" ", arr);
+        return name.split(" ")[1] + " " + name.split(" ")[0];
     }
-    public static double discount(double price, double percent)
+    private static double discount(double price, double percent)
     {
         return price - price * percent / 100;
     }
-    public static Integer differenceMaxMin(Integer[] list)
+    private static Integer differenceMaxMin(Integer[] list)
     {
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(list));
         return Collections.max(arr) - Collections.min(arr);
     }
-    public static Long equal(Integer a, Integer b, Integer c)
+    private static Long equal(Integer a, Integer b, Integer c)
     {
         List<Integer> list = new ArrayList<>(Arrays.asList(a,b,c));
         Map<Integer, Long> counted = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         //System.out.println(counted.keySet().toArray()[0] + " " + counted.values().toArray()[0]);
         return (Long)counted.values().toArray()[0];
     }
-    public static String reverse(String str)
+    private static String reverse(String str)
     {
         return new StringBuilder(str).reverse().toString();
     }
-    public static Integer programmers(Integer a, Integer b, Integer c)
+    private static Integer programmers(Integer a, Integer b, Integer c)
     {
-        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(new Integer[]{a, b, c}));
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(a, b, c));
         return Collections.max(arr) - Collections.min(arr);
     }
-    public static boolean getXO(String xo)
+    private static boolean getXO(String xo)
     {
         return xo.toLowerCase().chars().filter(ch -> ch == 'x').count() == xo.toLowerCase().chars().filter(ch -> ch == 'o').count();
     }
-    public static String bomb(String xo)
+    private static String bomb(String xo)
     {
         return xo.toLowerCase().contains("bomb") ? "DUCK!" : "Relax, there's no bomb.";
     }
-    public static boolean sameAscii(String a, String b)
+    private static boolean sameAscii(String a, String b)
     {
         return a.chars().sum() == b.chars().sum();
     }
